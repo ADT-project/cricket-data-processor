@@ -8,6 +8,7 @@ spring:
           github:
             client-id: 8224533c7ab5c58a9ae9
             client-secret: 05aa37486f476cd344850784b84fb26d0fbea589
+            redirect-uri: http://localhost:8080/search
   data:
     cassandra:
       keyspace-name: ipl

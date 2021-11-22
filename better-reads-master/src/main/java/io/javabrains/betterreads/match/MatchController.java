@@ -20,13 +20,13 @@ import io.javabrains.betterreads.deliveries.DeliveryRepository;
 
 @RestController
 public class MatchController {
-	
+
 	@Autowired
 	private MatchService matchService;
-	
+
 	@Autowired
 	private DeliveryRepository deliveryRepository;
-	
+
 //	@GetMapping("/match")
 //	public void getMatch() {
 //		Match match =new Match();
@@ -51,25 +51,26 @@ public class MatchController {
 //	public List<Match> getMatches(){
 //		return matchRepository.findAll();
 //	}
-	
-	
+
 	@GetMapping("/match")
-	public List<Match> getMatches(){
-		
+	public List<Match> getMatches() {
+
 		return matchService.getAllMatches();
-		
+
 	}
 	
-	@GetMapping("/match/{match_id}")
-	public List<Delivery> getDeliveries(@PathVariable int match_id){
-		return deliveryRepository.findDeliveriesByID(match_id);
-	}
-	
-	@GetMapping("/deliveries")
-	public List<Delivery> getDeliveries_all(){
-		
-		return deliveryRepository.findAll();
-		
-	}
+	  @GetMapping("/match/{match_id}") 
+	  public List<Delivery> getDeliveries(@PathVariable int match_id){ 
+		  
+		  return deliveryRepository.findDeliveriesByID(match_id); 
+		  }
+	 
+//	  @GetMapping("/deliveries") 
+//	  public List<Delivery> getDeliveries_all(){
+//	  
+//	  return deliveryRepository.findAll();
+//	  
+//	  }
+	 
 
 }
