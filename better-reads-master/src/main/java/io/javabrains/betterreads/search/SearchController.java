@@ -2,8 +2,10 @@ package io.javabrains.betterreads.search;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,27 +21,30 @@ import reactor.core.publisher.Mono;
 @Controller
 public class SearchController {
 
-    private final String COVER_IMAGE_ROOT = "http://covers.openlibrary.org/b/id/";
-
-    private final WebClient webClient;
 	@Autowired
 	private MatchRepository matchRepository;
 
-    public SearchController(WebClient.Builder webClientBuilder) {
-        this.webClient = webClientBuilder.exchangeStrategies(ExchangeStrategies.builder()
-        .codecs(configurer -> configurer
-                  .defaultCodecs()
-                  .maxInMemorySize(16 * 1024 * 1024))
-                .build()).baseUrl("http://openlibrary.org/search.json").build();
-    }
 
-    @GetMapping(value = "/search")
-    public String getSearchResults(Model model) {
-    	        List<io.javabrains.betterreads.match.Match> matches = matchRepository.findAll();
-            
-        model.addAttribute("searchResults", matches);
 
-        return "search";
-    }
-    
+	@GetMapping(value = "/search")
+	public String getSearchResults(@RequestParam Optional<String> year,
+			@RequestParam Optional<String> team, Model model) {
+             	
+		List<io.javabrains.betterreads.match.Match> matches = matchRepository.findAll();
+		if(year.isPresent()) {
+			matches = matches.stream().filter(match->match.getDate().contains(year.get()))
+        			.collect(Collectors.toList());
+		}
+		
+		if(team.isPresent()) {
+			matches = matches.stream().filter(match->
+			match.getTeam1().contains(team.get())|| match.getTeam2().contains(team.get()))
+        			.collect(Collectors.toList());
+		}
+		//System.out.println(team);
+		model.addAttribute("searchResults", matches);
+
+		return "search";
+	}
+
 }
