@@ -38,12 +38,12 @@
                 <!-- <img th:src="${result.cover_i}" class="card-img-top" alt="...">-->
                 <div class="card-body">
                     <p class="card-title" th:text="'Inning: ' + ${result.inning}"></p>
-                    <h6 class="card-title" th:text="'Ball Number '+ ${result.ball}"></h6>
-                    <p class="card-title" th:text="'Over '+ ${result.over}"></p>
-                    <p class="card-title" th:text="'Total Runs '+ ${result.totalRuns}"></p>
-                    <p class="card-title" th:text="'BatsMan '+ ${result.batsman}"></p>
-                    <p class="card-title" th:text="'Bowler '+ ${result.bowler}"></p>
-                    <p class="card-title" th:text="'DeliveryId '+ ${result.delivery_id}"></p>
+                    <h6 class="card-title" th:text="'Ball Number: '+ ${result.ball}"></h6>
+                    <p class="card-title" th:text="'Over: '+ ${result.over}"></p>
+                    <p class="card-title" th:text="'Total Runs: '+ ${result.totalRuns}"></p>
+                    <p class="card-title" th:text="'Batter: '+ ${result.batsman}"></p>
+                    <p class="card-title" th:text="'Bowler: '+ ${result.bowler}"></p>
+<!--                     <p class="card-title" th:text="'DeliveryId '+ ${result.delivery_id}"></p>  -->
 
 
                     <!--<h5 class="card-title" th:text="${result.team1}"></h5>
@@ -54,7 +54,7 @@
                     <input type="submit" value ="View Deliveries"/>
                     </form>
                     </div>-->
-                    <!--<a href="#" th:href="@{'/books/' + ${result.key}}" class="btn btn-primary">View Match</a>-->
+                  
                 </div>
             </div>
         </div>

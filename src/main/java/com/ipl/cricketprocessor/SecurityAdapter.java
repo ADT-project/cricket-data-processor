@@ -1,4 +1,4 @@
-package io.javabrains.betterreads;
+package com.ipl.cricketprocessor;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
@@ -11,8 +11,8 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 public class SecurityAdapter extends WebSecurityConfigurerAdapter {
 
 	/**
-	 * Spring Security configuration that sets up OAuth login and enables all URLs
-	 * to be accessible without authentication. Also sets up CSRF protection.
+	 * Spring Security configuration that sets up Github OAuth login and enables all URLs to be accessed with Auth
+	 * 
 	 */
     @Override
 	protected void configure(HttpSecurity http) throws Exception {

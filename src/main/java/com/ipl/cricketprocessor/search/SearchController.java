@@ -1,6 +1,6 @@
-package io.javabrains.betterreads.search;
+package com.ipl.cricketprocessor.search;
 
-import java.util.List;
+import java.util.List; 
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -15,7 +15,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import com.fasterxml.jackson.databind.deser.DataFormatReaders.Match;
 
-import io.javabrains.betterreads.match.MatchRepository;
+import com.ipl.cricketprocessor.match.MatchRepository;
+//import com.ipl.cricketprocessor.match.Match;
 import reactor.core.publisher.Mono;
 
 @Controller
@@ -30,7 +31,7 @@ public class SearchController {
 	public String getSearchResults(@RequestParam Optional<String> year,
 			@RequestParam Optional<String> team, Model model) {
              	
-		List<io.javabrains.betterreads.match.Match> matches = matchRepository.findAll();
+		List<com.ipl.cricketprocessor.match.Match> matches = matchRepository.findAll();
 		if(year.isPresent()) {
 			matches = matches.stream().filter(match->match.getDate().contains(year.get()))
         			.collect(Collectors.toList());

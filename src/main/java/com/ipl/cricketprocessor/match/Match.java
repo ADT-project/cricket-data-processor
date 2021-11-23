@@ -1,4 +1,4 @@
-package io.javabrains.betterreads.match;
+package com.ipl.cricketprocessor.match;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -1,4 +1,4 @@
-package io.javabrains.betterreads.match;
+package com.ipl.cricketprocessor.match;
 
 import org.springframework.data.cassandra.repository.CassandraRepository;
 import org.springframework.stereotype.Repository;

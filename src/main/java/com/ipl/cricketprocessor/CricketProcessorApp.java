@@ -1,25 +1,27 @@
-package io.javabrains.betterreads;
+package com.ipl.cricketprocessor;
 
-import java.nio.file.Path;
+import java.nio.file.Path; 
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.cassandra.CqlSessionBuilderCustomizer;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 
-import io.javabrains.betterreads.connection.DataStaxAstraProperties;
+import com.ipl.cricketprocessor.connection.DataStaxAstraProperties;
 
 /**
  * Main application class with main method that runs the Spring Boot app
  */
 
 @SpringBootApplication
+@ComponentScan({"com.ipl.cricketprocessor","com.ipl.cricketprocessor.connection","com.ipl.cricketprocessor.deliveries","com.ipl.cricketprocessor.match","com.ipl.cricketprocessor.search"})
 @EnableConfigurationProperties(DataStaxAstraProperties.class)
-public class BetterReadsApp {
+public class CricketProcessorApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BetterReadsApp.class, args);
+		SpringApplication.run(CricketProcessorApp.class, args);
 	}
 
     /**

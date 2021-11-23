@@ -1,6 +1,6 @@
-package io.javabrains.betterreads.match;
+package com.ipl.cricketprocessor.match;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.javabrains.betterreads.deliveries.Delivery;
-import io.javabrains.betterreads.deliveries.DeliveryRepository;
+import com.ipl.cricketprocessor.deliveries.Delivery;
+import com.ipl.cricketprocessor.deliveries.DeliveryRepository;
 
 @RestController
 public class MatchController {

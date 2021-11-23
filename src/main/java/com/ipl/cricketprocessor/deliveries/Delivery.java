@@ -1,4 +1,4 @@
-package io.javabrains.betterreads.deliveries;
+package com.ipl.cricketprocessor.deliveries;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
