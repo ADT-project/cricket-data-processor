@@ -6,9 +6,9 @@ spring:
       client:
         registration:
           github:
-            client-id: 9597a8fd4935243fe70e
-            client-secret: 7184abfe2bb5c95d0db2a88813cff5c7e960f1a3
-            redirect-uri: http://localhost:8080/search
+            client-id: dd949203170fd397c253
+            client-secret: 7dafa4ee37b4952d27d57a2c8306c99ac1c4da91
+            redirect-uri: https://cricket-data-processor-adt.herokuapp.com/search
   data:
     cassandra:
       keyspace-name: ipl
