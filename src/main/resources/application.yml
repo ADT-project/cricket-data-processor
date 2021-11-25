@@ -1,13 +1,13 @@
 spring:
   application:
-    name: betterreads
+    name: cricketprocessor
   security:
     oauth2:
       client:
         registration:
           github:
-            client-id: 8224533c7ab5c58a9ae9
-            client-secret: 05aa37486f476cd344850784b84fb26d0fbea589
+            client-id: 9597a8fd4935243fe70e
+            client-secret: 7184abfe2bb5c95d0db2a88813cff5c7e960f1a3
             redirect-uri: http://localhost:8080/search
   data:
     cassandra:
@@ -24,12 +24,12 @@ spring:
 
 
 datastax.astra:
-    secure-connect-bundle: secure-connect.zip
+  secure-connect-bundle: secure-connect.zip
 
 
 astra.db:
-    id: cda8f58d-c47f-4b2b-a104-2d39809aea7f
-    region: us-west1
-    keyspace: ipl
-    application.token: AstraCS:ASHtRjRSvBCBHbKXrZXYnkib:7743623f8af9b8d1a154ef1b295f2f186cbc8a12990bf4d5bb2dc332ec1cc89c
+  id: cda8f58d-c47f-4b2b-a104-2d39809aea7f
+  region: us-west1
+  keyspace: ipl
+  application.token: AstraCS:ASHtRjRSvBCBHbKXrZXYnkib:7743623f8af9b8d1a154ef1b295f2f186cbc8a12990bf4d5bb2dc332ec1cc89c
 
