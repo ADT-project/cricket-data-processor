@@ -11,7 +11,7 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 public class SecurityAdapter extends WebSecurityConfigurerAdapter {
 
 	/**
-	 * Spring Security configuration that sets up Github OAuth login and enables all URLs to be accessed with Auth
+	 * Spring Security config that enables Github OAuth login and enables all URLs to be accessed with Auth
 	 * 
 	 */
     @Override

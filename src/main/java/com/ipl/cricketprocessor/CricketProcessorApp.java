@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 import com.ipl.cricketprocessor.connection.DataStaxAstraProperties;
 
 /**
- * Main application class with main method that runs the Spring Boot app
+ * Main class with main() that runs the Spring Boot app
  */
 
 @SpringBootApplication
@@ -25,8 +25,7 @@ public class CricketProcessorApp {
 	}
 
     /**
-     * This is necessary to have the Spring Boot app use the Astra secure bundle 
-     * to connect to the database
+     * It is mandate to have  the Astra secure bundle to connect to the database
      */
 	@Bean
     public CqlSessionBuilderCustomizer sessionBuilderCustomizer(DataStaxAstraProperties astraProperties) {
