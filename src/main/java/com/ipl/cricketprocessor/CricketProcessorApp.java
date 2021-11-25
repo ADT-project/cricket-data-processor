@@ -1,6 +1,7 @@
 package com.ipl.cricketprocessor;
 
-import java.nio.file.Path; 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -29,7 +30,7 @@ public class CricketProcessorApp {
      */
 	@Bean
     public CqlSessionBuilderCustomizer sessionBuilderCustomizer(DataStaxAstraProperties astraProperties) {
-        Path bundle = astraProperties.getSecureConnectBundle().toPath();
+        Path bundle = Paths.get("src/main/resources/secure-connect.zip");
         return builder -> builder.withCloudSecureConnectBundle(bundle);
     }
 	
